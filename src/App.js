@@ -224,7 +224,7 @@ function HomePage() {
               <div className="team-hover-card">
                 <img src={teamImages[0]} alt="Julieann" className="team-member-img"/>
                 <h3 className="team-member-name">Julieann</h3>
-                <p className="team-member-title">Registered Behavior Technician (RBT)</p>
+                <p className="team-member-title">Respite Support Specialist</p>
                 <div className="team-overlay">
                   <h3 className="team-member-overlay-name">Meet Julieann</h3>
                   <div className="team-member-description">
@@ -250,7 +250,7 @@ function HomePage() {
               <div className="team-hover-card">
                 <img src={teamImages[1]} alt="Adrian Bowman" className="team-member-img"/>
                 <h3 className="team-member-name">Adrian Bowman</h3>
-                <p className="team-member-title">Registered Behavior Technician</p>
+                <p className="team-member-title">Respite Support Specialist</p>
                 <div className="team-overlay">
                   <h3 className="team-member-overlay-name">Meet Adrian</h3>
                   <div className="team-member-description">
@@ -271,10 +271,11 @@ function HomePage() {
                 </div>
               </div>
 
+              {/* Evys Card */}
               <div className="team-hover-card">
                 <img src={teamImages[3]} alt="Evy Leviege" className="team-member-img"/>
                 <h3 className="team-member-name">Evy Leviege</h3>
-                <p className="team-member-title">Care Specialist</p>
+                <p className="team-member-title">Co-owner Operational Manager</p>
                 <div className="team-overlay">
                   <h3 className="team-member-overlay-name">Meet Evy</h3>
                   <div className="team-member-description">
@@ -287,7 +288,7 @@ function HomePage() {
               <div className="team-hover-card">
                 <img src={teamImages[2]} alt="Don" className="team-member-img"/>
                 <h3 className="team-member-name">Don</h3>
-                <p className="team-member-title">CEO</p>
+                <p className="team-member-title">Owner/Director of Respite Services</p>
                 <div className="team-overlay">
                   <h3 className="team-member-overlay-name">Meet Don</h3>
                   <div className="team-member-description">
