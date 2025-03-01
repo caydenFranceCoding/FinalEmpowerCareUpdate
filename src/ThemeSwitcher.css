@@ -1,0 +1,35 @@
+.theme-switcher {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-left: 10px;
+}
+
+.dark-mode .theme-switcher {
+  color: #fff;
+}
+
+.theme-switcher:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .theme-switcher:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+}
+
+.theme-switcher:hover .theme-icon {
+  transform: rotate(30deg);
+}

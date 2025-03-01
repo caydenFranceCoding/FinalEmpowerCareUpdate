@@ -1,0 +1,313 @@
+:root {
+  --booking-bg: #ffffff;
+  --booking-text: #333333;
+  --booking-secondary-text: #555555;
+  --booking-border: #dddddd;
+  --booking-input-bg: #f8f9fa;
+  --booking-input-border: #ced4da;
+  --booking-card-bg: #ffffff;
+  --booking-info-bg: #f8f9fa;
+  --booking-success: #d4edda;
+  --booking-success-text: #155724;
+  --booking-error: #f8d7da;
+  --booking-error-text: #721c24;
+  --booking-shadow: rgba(0, 0, 0, 0.1);
+  --booking-accent: #0066cc;
+  --booking-accent-hover: #0055aa;
+  --booking-logo-border: #eeeeee;
+}
+
+.dark-mode {
+  --booking-bg: #121212;
+  --booking-text: #f5f5f5;
+  --booking-secondary-text: #cccccc;
+  --booking-border: #444444;
+  --booking-input-bg: #2d2d2d;
+  --booking-input-border: #555555;
+  --booking-card-bg: #1e1e1e;
+  --booking-info-bg: #262626;
+  --booking-success: #0d3a1f;
+  --booking-success-text: #8fffb8;
+  --booking-error: #3b1218;
+  --booking-error-text: #ff8f9a;
+  --booking-shadow: rgba(0, 0, 0, 0.3);
+  --booking-accent: #4dabf7;
+  --booking-accent-hover: #3b99e0;
+  --booking-logo-border: #333333;
+}
+
+.booking-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--booking-bg);
+  color: var(--booking-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+.booking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--booking-border);
+  position: relative;
+  background-color: var(--booking-card-bg);
+}
+
+.booking-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+  flex-grow: 1;
+  color: var(--booking-text);
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  color: var(--booking-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--booking-accent);
+}
+
+.back-link span {
+  margin-left: 0.5rem;
+}
+
+.theme-control {
+  width: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--booking-bg);
+  box-shadow: 0 4px 12px var(--booking-shadow);
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.booking-info {
+  background-color: var(--booking-info-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--booking-shadow);
+}
+
+.booking-info h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--booking-text);
+}
+
+.booking-info p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--booking-secondary-text);
+}
+
+.booking-contact-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--booking-border);
+}
+
+.booking-contact-info p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: var(--booking-secondary-text);
+}
+
+.booking-contact-info p svg {
+  margin-right: 0.75rem;
+  color: var(--booking-accent);
+}
+
+.booking-form {
+  padding: 2rem;
+  background-color: var(--booking-card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--booking-shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--booking-text);
+}
+
+.form-group label svg {
+  margin-right: 0.5rem;
+  color: var(--booking-accent);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--booking-input-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--booking-input-bg);
+  color: var(--booking-text);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--booking-accent);
+  outline: none;
+}
+
+.dark-mode input[type="date"],
+.dark-mode input[type="time"] {
+  color-scheme: dark;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--booking-text);
+}
+
+.radio-label input {
+  margin-right: 0.75rem;
+  width: auto;
+}
+
+.dark-mode .radio-label input[type="radio"] {
+  accent-color: var(--booking-accent);
+}
+
+.booking-submit {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--booking-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-submit:hover {
+  background-color: var(--booking-accent-hover);
+}
+
+.booking-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-status {
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.form-status.success {
+  background-color: var(--booking-success);
+  border: 1px solid #34D399;
+  color: var(--booking-success-text);
+}
+
+.form-status.error {
+  background-color: var(--booking-error);
+  border: 1px solid #F87171;
+  color: var(--booking-error-text);
+}
+
+.booking-page-logo {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--booking-logo-border);
+  display: flex;
+  justify-content: center;
+}
+
+.booking-logo-image {
+  height: auto;
+  width: 220px;
+  max-width: 90%;
+  border-radius: 15px;
+  background-color: var(--booking-card-bg);
+  padding: 10px;
+}
+
+.theme-switcher {
+  background: transparent;
+  border: 1px solid var(--booking-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-switcher:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(77, 171, 247, 0.5);
+}
+
+.theme-icon {
+  color: var(--booking-text);
+  transition: all 0.3s ease;
+}
+
+.dark-mode .theme-switcher {
+  border-color: #555;
+  background: #2d2d2d;
+}
+
+.dark-mode .theme-icon {
+  color: #fff;
+}
+
+:root:not(.dark-mode) .theme-switcher {
+  border-color: #ddd;
+  background: #f5f5f5;
+}
+
+:root:not(.dark-mode) .theme-icon {
+  color: #333;
+}
