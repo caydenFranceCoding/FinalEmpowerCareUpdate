@@ -418,9 +418,7 @@ useEffect(() => {
                   {activeFaqId === 4 ? <Minus size={20}/> : <Plus size={20}/>}
                 </button>
                 <div className={`faq-answer ${activeFaqId === 4 ? 'open' : ''}`}>
-                  <p>We accept various insurance plans and can help you understand your coverage options. Our team is
-                    experienced in working with different insurance providers and can assist you in navigating the
-                    process to maximize your benefits. Contact us for more details about specific plans we accept.</p>
+                  <p>As of right now we only accept private payments. Contact us for more details about specifics.</p>
                 </div>
               </div>
             </div>
