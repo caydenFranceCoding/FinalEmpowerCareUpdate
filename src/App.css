@@ -1511,3 +1511,66 @@ body.dark-mode,
     border: none;
   }
 }
+
+@media (max-width: 768px) {
+  .team-hover-card .team-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 102, 204, 0.95);
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .team-hover-card.active .team-overlay {
+    display: block;
+    animation: fadeIn 0.3s;
+  }
+  
+  .team-hover-card .team-overlay::after {
+    content: "×";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .team-member-overlay-name {
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .team-member-description {
+    color: white;
+    line-height: 1.6;
+    margin: 20px 0;
+  }
+  
+  .team-hover-card::before {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+}
