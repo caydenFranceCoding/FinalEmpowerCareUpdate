@@ -50,6 +50,32 @@ function HomePage() {
     setCurrentSlide((prev) => (prev - 1 + backgrounds.length) % backgrounds.length);
   };
 
+useEffect(() => {
+  const handleCardClick = (e) => {
+    const card = e.target.closest('.team-hover-card');
+    if (!card) return;
+
+    const allCards = document.querySelectorAll('.team-hover-card');
+
+    if (card.classList.contains('active')) {
+      card.classList.remove('active');
+    } else {
+      allCards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    }
+  };
+
+  const teamSection = document.getElementById('team');
+  if (teamSection) {
+    teamSection.addEventListener('click', handleCardClick);
+  }
+  return () => {
+    if (teamSection) {
+      teamSection.removeEventListener('click', handleCardClick);
+    }
+  };
+}, []);
+
   const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
