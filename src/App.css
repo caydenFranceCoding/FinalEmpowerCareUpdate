@@ -1574,3 +1574,31 @@ body.dark-mode,
     z-index: 2;
   }
 }
+
+@media (max-width: 768px) {
+  .team-hover-card::before {
+    display: none !important;
+  }
+  
+  .team-hover-card::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+  
+  .team-hover-card .minus-icon,
+  .team-hover-card [class*="minus"],
+  .team-hover-card .team-overlay::after {
+    display: none !important;
+  }
+}
