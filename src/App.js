@@ -59,6 +59,32 @@ function HomePage() {
     setIsOpen(!isOpen);
   };
 
+useEffect(() => {
+  const cards = document.querySelectorAll('.team-hover-card');
+  
+  const handleTouch = function(e) {
+
+    if (!this.classList.contains('active')) {
+      e.preventDefault();
+    }
+    this.classList.toggle('active');
+    
+    cards.forEach(otherCard => {
+      if (otherCard !== this) {
+        otherCard.classList.remove('active');
+      }
+    });
+  };
+  cards.forEach(card => {
+    card.addEventListener('touchstart', handleTouch);
+  });
+  return () => {
+    cards.forEach(card => {
+      card.removeEventListener('touchstart', handleTouch);
+    });
+  };
+}, []);
+
   return (
     <div className="faq-item">
       <button
