@@ -1,0 +1,422 @@
+/* EmpowerEdge Skill Center Page Styles */
+
+.empoweredge-page {
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-top: 70px; /* Account for fixed navbar */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hero Carousel Styles */
+.empoweredge-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  transition: opacity 1s;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide.inactive {
+  opacity: 0;
+  z-index: 0;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.slide-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.slide-nav-button.prev {
+  left: 1rem;
+}
+
+.slide-nav-button.next {
+  right: 1rem;
+}
+
+.empoweredge-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 20;
+  padding: 0 20px;
+}
+
+.empoweredge-logo-container {
+  margin-bottom: 20px;
+}
+
+.empoweredge-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.empoweredge-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.empoweredge-hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.empoweredge-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.empoweredge-hero-buttons .cta-button {
+  margin: 0.5rem;
+}
+
+/* Services Grid With Icons */
+.service-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Process Section */
+.process-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.process-step {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.process-number {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+
+.process-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.process-text {
+  color: var(--secondary-text-color);
+  line-height: 1.6;
+}
+
+/* Testimonials */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-content {
+  position: relative;
+  padding-top: 30px;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-content::before {
+  content: "\201C"; /* Fixed quote character */
+  font-size: 5rem;
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  color: var(--accent-color);
+  opacity: 0.2;
+  font-family: Georgia, serif;
+}
+
+.testimonial-content p {
+  color: var(--text-color);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.testimonial-author {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.author-relation {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+
+/* Enrollment Section */
+.enrollment-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .enrollment-container {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.enrollment-info, .enrollment-cta {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.enrollment-info h3, .enrollment-cta h3 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.enrollment-details {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.enrollment-details li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--secondary-text-color);
+}
+
+.enrollment-details li:last-child {
+  border-bottom: none;
+}
+
+.enrollment-note {
+  background-color: rgba(46, 133, 237, 0.1);
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 0 4px 4px 0;
+  margin-top: 1.5rem;
+  color: var(--secondary-text-color);
+}
+
+.enrollment-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.enrollment-cta h3 {
+  color: white;
+}
+
+.enrollment-cta p {
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.enrollment-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.enrollment-buttons .cta-button {
+  background-color: white;
+  color: var(--accent-color);
+  border-color: white;
+}
+
+.enrollment-buttons .cta-button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.enrollment-buttons .cta-button:before {
+  background-color: transparent;
+}
+
+/* Contact Section Customization */
+.empoweredge-logo-contact {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.empoweredge-logo-contact img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--accent-color);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .empoweredge-page {
+  background-color: var(--background-color);
+}
+
+.dark-mode .process-step,
+.dark-mode .testimonial-card,
+.dark-mode .enrollment-info {
+  background-color: var(--card-background);
+}
+
+.dark-mode .process-title,
+.dark-mode .testimonial-content p {
+  color: var(--text-color);
+}
+
+.dark-mode .process-text,
+.dark-mode .enrollment-details li {
+  color: var(--secondary-text-color);
+}
+
+.dark-mode .enrollment-note {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .empoweredge-hero-title {
+    font-size: 2.25rem;
+  }
+
+  .empoweredge-hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .empoweredge-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .process-container,
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+
+  .enrollment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .enrollment-cta {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Form Enhancements */
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--booking-input-border);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--booking-input-bg);
+  color: var(--booking-text);
+  transition: border-color 0.3s;
+}
+
+.dark-mode .form-group select {
+  background-color: var(--booking-input-bg);
+  color: var(--booking-text);
+  border-color: var(--booking-input-border);
+}
+
+.form-group select:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.main-site-link {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-site-link:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
