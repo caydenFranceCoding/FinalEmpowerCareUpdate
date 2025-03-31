@@ -5,6 +5,10 @@ import BookingPage from './BookingPage';
 import './App.css';
 import emailjs from '@emailjs/browser';
 import ThemeSwitcher from './ThemeSwitcher';
+import EmpowerEdgeSkillCenter from './EmpowerEdgeSkillCenter';
+import './EmpowerEdgeSkillCenter.css';
+import PageTransition from './PageTransition';
+
 
 emailjs.init("_exHAC5L2fEWp_FA4");
 
@@ -29,10 +33,13 @@ function HomePage() {
   const [activeFaqId, setActiveFaqId] = useState(null);
 
   const navigate = useNavigate();
-
   const goToBooking = () => {
   navigate('/booking');
 };
+
+  const gotToEmpowerEdge = () => {
+    navigate('/empoweredge');
+  }
 
 
   useEffect(() => {
@@ -69,6 +76,7 @@ useEffect(() => {
   if (teamSection) {
     teamSection.addEventListener('click', handleCardClick);
   }
+
   return () => {
     if (teamSection) {
       teamSection.removeEventListener('click', handleCardClick);
@@ -84,32 +92,6 @@ useEffect(() => {
     e.stopPropagation();
     setIsOpen(!isOpen);
   };
-
-useEffect(() => {
-  const cards = document.querySelectorAll('.team-hover-card');
-  
-  const handleTouch = function(e) {
-
-    if (!this.classList.contains('active')) {
-      e.preventDefault();
-    }
-    this.classList.toggle('active');
-    
-    cards.forEach(otherCard => {
-      if (otherCard !== this) {
-        otherCard.classList.remove('active');
-      }
-    });
-  };
-  cards.forEach(card => {
-    card.addEventListener('touchstart', handleTouch);
-  });
-  return () => {
-    cards.forEach(card => {
-      card.removeEventListener('touchstart', handleTouch);
-    });
-  };
-}, []);
 
   return (
     <div className="faq-item">
@@ -143,6 +125,7 @@ useEffect(() => {
                 <a href="#faq" className="nav-link">FAQ</a>
                 <a href="#contact" className="nav-link">Contact</a>
                 <a href="/booking" className="nav-link">Book</a>
+                <a href="/empoweredge" className="nav-link">EmpowerEdge</a>
               </div>
 
               <div className="cart-menu">
@@ -166,6 +149,7 @@ useEffect(() => {
                 <a href="#services" className="nav-link">Services</a>
                 <a href="#team" className="nav-link">Team</a>
                 <Link to="/booking" className="nav-link" onClick={() => setIsMenuOpen(false)}>Book Appointment</Link>
+                <a href="/empoweredge" className="nav-link" onClick={() => setIsMenuOpen(false)}>EmpowerEdge</a>
               </div>
             </div>
         )}
@@ -317,13 +301,12 @@ useEffect(() => {
 
                       I'm all about bringing joy and creativity into my work to make an impact on the kids I support.
                       I'm always on the hunt for new ideas to make every day engaging and fun. Staying committed to
-                      growing in my field is super important to me, and I can't wait to see what new opportunities come
+                      growing in my field is super  important to me, and I can't wait to see what new opportunities come
                       my way!</p>
                   </div>
                 </div>
               </div>
 
-              {/* Evys Card */}
               <div className="team-hover-card">
                 <img src={teamImages[3]} alt="Evy Leviege" className="team-member-img"/>
                 <h3 className="team-member-name">Evy Leviege</h3>
@@ -418,7 +401,7 @@ useEffect(() => {
                   {activeFaqId === 4 ? <Minus size={20}/> : <Plus size={20}/>}
                 </button>
                 <div className={`faq-answer ${activeFaqId === 4 ? 'open' : ''}`}>
-                  <p>As of right now we only accept private payments. Contact us for more details about specifics.</p>
+                  <p>As of right now we are only accepting private payments.</p>
                 </div>
               </div>
             </div>
@@ -493,9 +476,11 @@ useEffect(() => {
 function App() {
   return (
       <Router>
+        <PageTransition />
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/booking" element={<BookingPage/>}/>
+          <Route path="/empoweredge" element={<EmpowerEdgeSkillCenter/>}/>
         </Routes>
       </Router>
   );
