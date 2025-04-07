@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Users, BriefcaseBusiness, Lightbulb, BadgeCheck, Brain, Calendar, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, Users, BriefcaseBusiness, Lightbulb, BadgeCheck, Brain, Calendar, ChevronLeft, ChevronRight, PhoneCall } from 'lucide-react';
 import ThemeSwitcher from './ThemeSwitcher';
 import './EmpowerEdgeSkillCenter.css';
 
@@ -120,8 +120,9 @@ function EmpowerEdgeSkillCenter() {
           </div>
           <h1 className="empoweredge-hero-title">EmpowerEdge Skill Center</h1>
           <p className="empoweredge-hero-subtitle">Your path to success</p>
+          <div className="coming-soon-badge">Coming Soon</div>
           <div className="empoweredge-hero-buttons">
-            <Link to="/booking" className="cta-button">Schedule Assessment</Link>
+            <a href="#contact" className="cta-button">Call For Information</a>
             <a href="#programs" className="cta-button">Explore Programs</a>
           </div>
         </div>
@@ -258,38 +259,25 @@ function EmpowerEdgeSkillCenter() {
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section id="success-stories" className="section gray fade-in-section">
+      {/* Coming Soon Notice */}
+      <section id="coming-soon" className="section gray fade-in-section">
         <div className="section-container">
-          <h2 className="section-title">Success Stories</h2>
-          <div className="testimonials-container">
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"EmpowerEdge Skill Center helped my son develop confidence and job skills that led to his first paying position. The coaches were patient and understanding of his unique needs while pushing him to grow. He's now been employed for over a year and loves his job!"</p>
-              </div>
-              <div className="testimonial-author">
-                <p className="author-name">Maria T.</p>
-                <p className="author-relation">Parent of Program Graduate</p>
-              </div>
+          <div className="coming-soon-container">
+            <div className="coming-soon-icon">
+              <Calendar size={60} color="#2e85ed" />
             </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"Before joining EmpowerEdge, I struggled with talking to people and handling money. Now I work at a grocery store, have my own bank account, and even take the bus by myself. The social skills training really helped me feel comfortable talking to customers."</p>
-              </div>
-              <div className="testimonial-author">
-                <p className="author-name">James K.</p>
-                <p className="author-relation">Program Participant</p>
-              </div>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <p>"As an employer who has hired multiple graduates from EmpowerEdge, I've been impressed by how well-prepared they are for the workplace. The ongoing support from their job coaches ensures a smooth transition and helps us create an inclusive environment that benefits everyone."</p>
-              </div>
-              <div className="testimonial-author">
-                <p className="author-name">Robert L.</p>
-                <p className="author-relation">Local Business Owner</p>
+            <h2 className="coming-soon-title">Program Launching Soon</h2>
+            <p className="coming-soon-text">
+              We're excited to announce that the EmpowerEdge Skill Center programs are currently in development and will be launching soon. We're working diligently to create high-quality, impactful services that will make a difference in our community.
+            </p>
+            <div className="coming-soon-cta">
+              <h3>Want to be notified when we launch?</h3>
+              <p>Contact us today to join our waiting list and be among the first to know when our programs become available.</p>
+              <div className="coming-soon-buttons">
+                <a href="tel:+214-225-0823" className="cta-button phone-button">
+                  <PhoneCall size={20} />
+                  <span>Call For Information</span>
+                </a>
               </div>
             </div>
           </div>
@@ -299,7 +287,7 @@ function EmpowerEdgeSkillCenter() {
       {/* Enrollment Section */}
       <section id="enrollment" className="section light fade-in-section">
         <div className="section-container">
-          <h2 className="section-title">Join Our Program</h2>
+          <h2 className="section-title">Program Information</h2>
           <div className="enrollment-container">
             <div className="enrollment-info">
               <h3>Program Details</h3>
@@ -310,15 +298,18 @@ function EmpowerEdgeSkillCenter() {
                 <li><strong>Schedule:</strong> Full-time and part-time options available</li>
                 <li><strong>Funding Options:</strong> Private pay, Medicaid waiver programs (when applicable), and scholarships available</li>
               </ul>
-              <p className="enrollment-note">Our programs are individualized to meet the specific needs and goals of each participant. Contact us to schedule an initial consultation and learn more about which services would be most beneficial.</p>
+              <p className="enrollment-note">Our programs are individualized to meet the specific needs and goals of each participant. Contact us to learn more about which services would be most beneficial when we launch.</p>
             </div>
 
             <div className="enrollment-cta">
-              <h3>Ready to Get Started?</h3>
-              <p>Take the first step toward independence and career success by scheduling an assessment with our team.</p>
+              <h3>Be First In Line</h3>
+              <p>Programs are not yet available, but you can join our waiting list to be notified when registration opens.</p>
               <div className="enrollment-buttons">
-                <Link to="/booking" className="cta-button">Schedule Assessment</Link>
                 <a href="#contact" className="cta-button">Contact Us</a>
+                <a href="tel:+1234567890" className="cta-button">
+                  <PhoneCall size={16} style={{ marginRight: '8px' }} />
+                  Call For Details
+                </a>
               </div>
             </div>
           </div>
@@ -338,8 +329,12 @@ function EmpowerEdgeSkillCenter() {
                   <span>Monday-Friday: 9:00 AM - 5:00 PM</span>
                 </div>
                 <div className="contact-item">
+                  <PhoneCall size={20}/>
+                  <span>Call us at: 214-225-0823</span>
+                </div>
+                <div className="contact-item">
                   <Users size={20}/>
-                  <span>Now accepting new participants</span>
+                  <span>Now accepting waiting list sign-ups</span>
                 </div>
                 <div className="contact-item">
                   <ArrowLeft size={20}/>
@@ -381,7 +376,7 @@ function EmpowerEdgeSkillCenter() {
                 <label htmlFor="message">Message</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
               </div>
-              <button type="submit" className="cta-button">Send Message</button>
+              <button type="submit" className="cta-button">Join Waiting List</button>
             </form>
           </div>
         </div>
