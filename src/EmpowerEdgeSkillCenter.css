@@ -519,3 +519,12 @@
     width: 100%;
   }
 }
+
+#coming-soon.section.gray {
+  background-color: transparent !important;
+}
+
+.coming-soon-container {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
