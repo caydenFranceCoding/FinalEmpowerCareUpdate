@@ -1,15 +1,12 @@
-/* EmpowerEdge Skill Center Page Styles */
-
 .empoweredge-page {
   max-width: 100%;
   overflow-x: hidden;
-  padding-top: 70px; /* Account for fixed navbar */
+  padding-top: 70px;
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hero Carousel Styles */
 .empoweredge-hero {
   position: relative;
   height: 100vh;
@@ -113,14 +110,12 @@
   margin: 0.5rem;
 }
 
-/* Services Grid With Icons */
 .service-icon {
   margin-bottom: 1.5rem;
   display: flex;
   justify-content: center;
 }
 
-/* Process Section */
 .process-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -169,7 +164,6 @@
   line-height: 1.6;
 }
 
-/* Testimonials */
 .testimonials-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -196,7 +190,7 @@
 }
 
 .testimonial-content::before {
-  content: "\201C"; /* Fixed quote character */
+  content: "\201C";
   font-size: 5rem;
   position: absolute;
   top: -30px;
@@ -228,7 +222,6 @@
   font-size: 0.9rem;
 }
 
-/* Enrollment Section */
 .enrollment-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -320,7 +313,6 @@
   background-color: transparent;
 }
 
-/* Contact Section Customization */
 .empoweredge-logo-contact {
   margin-top: 2rem;
   text-align: center;
@@ -333,7 +325,6 @@
   border: 3px solid var(--accent-color);
 }
 
-/* Dark Mode Adjustments */
 .dark-mode .empoweredge-page {
   background-color: var(--background-color);
 }
@@ -358,7 +349,6 @@
   background-color: rgba(59, 130, 246, 0.15);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .empoweredge-hero-title {
     font-size: 2.25rem;
@@ -387,7 +377,6 @@
   }
 }
 
-/* Form Enhancements */
 .form-group select {
   width: 100%;
   padding: 0.75rem;
@@ -419,4 +408,114 @@
 .main-site-link:hover {
   color: var(--accent-color);
   text-decoration: underline;
+}
+
+
+.coming-soon-badge {
+  background-color: rgb(255, 255, 255);
+  color: #0066cc;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgb(0, 102, 204);
+  transform: rotate(-5deg);
+  display: inline-block;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.coming-soon-container {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.coming-soon-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.coming-soon-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.coming-soon-text {
+  color: var(--secondary-text-color);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.coming-soon-cta {
+  background-color: var(--accent-color);
+  border-radius: 8px;
+  padding: 2rem;
+  color: white;
+  margin-top: 2rem;
+}
+
+.coming-soon-cta h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.coming-soon-cta p {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.coming-soon-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.phone-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: white;
+  color: var(--accent-color);
+}
+
+.phone-button:hover {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.enrollment-cta h3 {
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .coming-soon-title {
+    font-size: 2rem;
+  }
+
+  .coming-soon-container {
+    padding: 2rem 1rem;
+  }
+
+  .coming-soon-cta {
+    padding: 1.5rem 1rem;
+  }
+
+  .phone-button {
+    width: 100%;
+  }
 }
