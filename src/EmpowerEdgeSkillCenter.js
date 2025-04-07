@@ -14,12 +14,11 @@ function EmpowerEdgeSkillCenter() {
     '/skillcenter4.jpg'
   ];
 
-  // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Carousel auto-advance timer
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % backgrounds.length);
@@ -27,7 +26,7 @@ function EmpowerEdgeSkillCenter() {
     return () => clearInterval(timer);
   }, [backgrounds.length]);
 
-  // Manual navigation functions
+  
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % backgrounds.length);
   };
@@ -36,7 +35,6 @@ function EmpowerEdgeSkillCenter() {
     setCurrentSlide((prev) => (prev - 1 + backgrounds.length) % backgrounds.length);
   };
 
-  // Add fade-in effect for sections
  useEffect(() => {
   const fadeElements = document.querySelectorAll('.fade-in-section');
 
@@ -45,13 +43,12 @@ function EmpowerEdgeSkillCenter() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible');
-        // Stop observing this element once it's animated
         observer.unobserve(entry.target);
       }
     });
   }, {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px' // Trigger slightly before the element is in view
+    rootMargin: '0px 0px -50px 0px'
   });
 
   // Start observing elements
@@ -306,7 +303,7 @@ function EmpowerEdgeSkillCenter() {
               <p>Programs are not yet available, but you can join our waiting list to be notified when registration opens.</p>
               <div className="enrollment-buttons">
                 <a href="#contact" className="cta-button">Contact Us</a>
-                <a href="tel:+1234567890" className="cta-button">
+                <a href="tel:+214-225-0823" className="cta-button">
                   <PhoneCall size={16} style={{ marginRight: '8px' }} />
                   Call For Details
                 </a>
